@@ -10,13 +10,18 @@
   },
   "dependencies": {
     "@clerk/clerk-expo": "^0.20.10",
+    "@kinde-oss/react-native-sdk-0-7x": "^1.2.2",
+    "@react-navigation/bottom-tabs": "^6.5.20",
+    "@react-navigation/native": "^6.1.17",
+    "@types/react": "~18.2.45",
     "expo": "~50.0.13",
     "expo-status-bar": "~1.11.1",
+    "expo-web-browser": "~12.8.2",
     "react": "18.2.0",
     "react-native": "0.73.5",
-    "typescript": "^5.3.0",
-    "@types/react": "~18.2.45",
-    "expo-web-browser": "~12.8.2"
+    "react-native-safe-area-context": "4.8.2",
+    "react-native-screens": "~3.29.0",
+    "typescript": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

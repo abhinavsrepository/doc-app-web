@@ -1,0 +1,6 @@
+export default{
+KINDE_ISSUER_URL:"https://irislearn.kinde.com",
+KINDE_POST_CALLBACK_URL:"exp://192.168.29.172:8081",
+KINDE_CLIENT_ID:"55cdc445d90c45da9ae13c6d5511fbec",
+KINDE_POST_LOGOUT_REDIRECT_URL:"exp://192.168.29.172:8081",
+}
