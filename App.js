@@ -1,24 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import {useEffect} from 'react'
+import {useEffect,useState,createContext} from 'react'
 import { client } from './App/Utils/KindConfig';
 
 import LoginScreen from './App/Screens/LoginScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './App/Navigations/TabNavigation';
 
-
+export const AuthContext=createContext()
 export default function App() {
+
+  const [auth,setAuth]=useState(false);
+  useEffect(()=>{
+    checkAuthenticate();
+  },[auth])
   const checkAuthenticate = async () => {
     // Using `isAuthenticated` to check if the user is authenticated or not
     if (await client.isAuthenticated) {
       const userProfile = await client.getUserDetails();
-console.log(userProfile);
-// output: {"given_name":"Dave","id":"abcdef","family_name":"Smith","email":"dave@smith.com"}
-      console.log("Authenticated")
-        // Need to implement, e.g: call an api, etc...
+      setAuth(true)
+
+        
     } else {
-      return <LoginScreen/>
+      setAuth(false)
+      // return <LoginScreen/>
         // Need to implement, e.g: redirect user to sign in, etc..
     }
 };
@@ -29,9 +34,11 @@ useEffect(() => {
   return (
     <View style ={styles.container}>
       {/* <LoginScreen/> */}
+      <AuthContext.Provider value={{auth,setAuth}}>
       <NavigationContainer>
-        <TabNavigation/>
+      {auth? <TabNavigation/>:<LoginScreen/>}
       </NavigationContainer>
+      </AuthContext.Provider>
     </View>
   )
 }
@@ -39,7 +46,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
 });

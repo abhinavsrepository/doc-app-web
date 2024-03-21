@@ -16,10 +16,26 @@ export default function TabNavigation() {
     }}>
       <Tab.Screen name="Home" component={HomeScreen} 
       options={{
-        tabBarIcon:(color,size)=>(<Ionicons name="home" size={24} color={color} />)
+        tabBarIcon:({color,size})=>(<Ionicons name="home" size={24} color={color} />),
+        tabBarLabel:({color})=>(
+          <Text style={{color:color}}>Home</Text>
+        )
+      }}
+      />
+      <Tab.Screen name="MyCourse" component={MyCourseScreen}
+      options={{
+        tabBarIcon:({color,size})=>(<Ionicons name="book" size={24} color={color} />),
+        tabBarLabel:({color})=>(
+          <Text style={{color:color}}>MyCourse</Text>
+        )
+      }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} 
+      options={{
+        tabBarIcon:({color,size})=>(<Ionicons name="person-circle" size={24} color={color} />),
+        tabBarLabel:({color})=>(
+          <Text style={{color:color}}>Profile</Text>
+        )
       }}/>
-      <Tab.Screen name="MyCourse" component={MyCourseScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
     
 
     </Tab.Navigator>
