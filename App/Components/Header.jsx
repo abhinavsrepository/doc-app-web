@@ -20,8 +20,8 @@ export default function Header() {
       <Image source={{uri:userDetail?.picture}}
       style={{width:45,height:45,borderRadius:99}}/>
       <View>
-        <Text style={{fontSize:18}}>Welcome to Irislearn</Text>
-        <Text style={{fontSize:28,fontWeight:'bold',color:Colors.PURPLE}}>Hello, {userDetail?.given_name}</Text>
+        <Text style={{fontSize:18,fontFamily:'outfit-medium'}}>Welcome to Irislearn</Text>
+        <Text style={{fontSize:28,fontWeight:'bold',color:Colors.PURPLE,fontFamily:'outfit-medium'}}>Hello, {userDetail?.given_name}</Text>
       </View>
     </View>
     <View style={styles.input}>

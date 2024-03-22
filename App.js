@@ -1,14 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import {useEffect,useState,createContext} from 'react'
 import { client } from './App/Utils/KindConfig';
 
 import LoginScreen from './App/Screens/LoginScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './App/Navigations/TabNavigation';
+import { useFonts } from 'expo-font';
 
 export const AuthContext=createContext()
 export default function App() {
+  const [fontsLoaded ,fontError] =useFonts({
+    'outfit':require('./assets/fonts/Outfit-Regular.ttf'),
+    'outfit-medium':require('./assets/fonts/Outfit-Medium.ttf'),
+    'outfit-bold':require('./assets/fonts/Outfit-Bold.ttf')
+  })
 
   const [auth,setAuth]=useState(false);
   useEffect(()=>{
