@@ -2,7 +2,7 @@ import { View, Text ,Image, TextInput,StyleSheet} from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { client } from '../Utils/KindConfig';
 import Colors from '../Utils/Colors';
-
+import PageHeading from './Pageheading';
 import { Ionicons } from '@expo/vector-icons';
 export default function Header() {
     const [userDetail,setUserDetail]=useState()
@@ -16,6 +16,7 @@ export default function Header() {
       
     }
   return (<>
+  <PageHeading/>
     <View style={{display:"flex",flexDirection:'row',gap:5,alignItems:'center'}}>
       <Image source={{uri:userDetail?.picture}}
       style={{width:45,height:45,borderRadius:99}}/>
