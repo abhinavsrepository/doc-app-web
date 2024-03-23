@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View} from 'react-native';
 import {useEffect,useState,createContext} from 'react'
 import { client } from './App/Utils/KindConfig';
